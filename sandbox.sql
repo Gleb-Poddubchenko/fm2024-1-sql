@@ -1,0 +1,10 @@
+DROP TABLE IF EXISTS a;
+
+CREATE TABLE IF NOT EXISTS a(
+b int,
+c int,
+CONSTRAINT "uniquepair" PRIMARY KEY(b,c)
+);
+
+INSERT INTO a VALUES(1,1),(2,1),(3,1);
+
