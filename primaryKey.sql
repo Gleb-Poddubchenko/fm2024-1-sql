@@ -5,13 +5,13 @@ DROP TABLE IF EXISTS "messages";
 CREATE TABLE IF NOT EXISTS "messages"(
     "id" bigserial PRIMARY KEY,
     "body" varchar(2048) NOT NULL CHECK("body"!=''),
-    "author" varchar(32) NOT NULL CHECK("author" !=''),
+    "authorId"int REFERENCES "users"("id"),
     "createAt" timestamp NOT NULL DEFAULT current_timestamp,
     "IsREad" boolean  DEFAULT false
 );
 
-INSERT INTO "messages"("body","author")
+INSERT INTO "messages"("body","authorId")
 VALUES
-('hi','Tom'),
-('hi','Tom'),
-('1111','22222');
+('hi','3'),
+('hi','1'),
+('1111','2');
